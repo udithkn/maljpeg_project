@@ -18,8 +18,7 @@ body {
     flex-direction: column;
     justify-content: start;
 }
-
-#imgsContainer,#imgContainer {
+#imgsContainer {
     float: left;
     width: 100%;
     overflow-x: hidden;
@@ -31,7 +30,35 @@ body {
     height: 100%;
     position: relative;
 }
-
+#imgContainer {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    margin-top: 10px;
+}
+.imgContainer{
+    position: relative;
+    margin-bottom: 10px;
+}
+.imgInfo{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.imgInfo.malicious{
+    border: 1px solid red;
+    border-radius: 3px;
+    background-color: red;
+    color: white;
+    padding: 5px;
+}
+.imgInfo.benign{
+    border: 1px solid green;
+    border-radius: 3px;
+    background-color: green;
+    color: white;
+    padding: 5px;
+}
 /*loading*/
 .spinner {
     left:50%;

@@ -15,15 +15,9 @@ var imageFetcher = {
         .then(response=>{
             console.log(response);
             response.forEach(element => {
-                data += `<div class="imgContainer" pixels="179515" width="805" height="223" sizetype="medium" layout="wide" imgsrc="${element}" type="JPG" style="display: -webkit-box;">
-                    <img class="origImg" id="${element['src']}" src="${element['src']}" style="wwidth:805px; hheight:223px">
-                    <br>
-                    <input class="imgInput" value="${element['src']}">
-                    <div class="imgInfo">
-                        <div class="imgSize imgDimension" style="margin-left:5px;">23 KB</div>
-                        <div class="imgSize">805x223</div>
-                        <div class="imgSize imgType" style="margin-right:5px;">JPG</div>
-                    </div>
+                data += `<div class="imgContainer" pixels="179515" sizetype="medium" layout="wide" imgsrc="${element}" type="JPG" style="display: flex;flex-direction: column;">
+                    <img class="origImg" id="${element['src']}" src="${element['src']}" style="width:100%">
+                    <div class="imgInfo ${element['status']}">${element['status']}</div>
                 </div>`;
             });
             document.getElementById("imgContainer").innerHTML = data;
